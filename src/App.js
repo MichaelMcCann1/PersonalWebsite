@@ -8,50 +8,38 @@ import Intro from './components/Intro';
 import Skills from './components/Skills';
 import AllProjects from './components/AllProjects';
 import ScrollToTop from './components/ScrollToTop'
+import GlobalStyle from './components/GlobalStyle';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import themeReducer from './features/themeSlice'
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    transition: all .3 ease;
+const store = configureStore({
+  reducer: {
+    theme: themeReducer
   }
-
-  body {
-    background-color: ${props => props.darkMode ? 'rgb(8,20,42)' : 'rgb(252, 252, 252)'};
-  }
-
-  :root {
-    --primaryColor: rgb(100, 166, 200);
-    --width: 90%;
-    --maxWidth: 1200px;
-    --darkModeText: rgb(210,213,217);
-  }
-`
+})
 
 function App() {
-
-  const [darkMode, setDarkMode] = useState(false)
-
   return (
     <Router>
-      <ScrollToTop />
-      <GlobalStyle darkMode={darkMode}/>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
-      <Switch>
-        <Route exact path="/">
-          <Intro darkMode={darkMode}/>
-          <Skills darkMode={darkMode}/>
-          <Projects darkMode={darkMode}/>
-        </Route>
-        <Route exact path="/AllProjects">
-          <AllProjects darkMode={darkMode}/>
-        </Route>
-        <Route>
-          <NotFound darkMode={darkMode} />
-        </Route>
-      </Switch>
+      <Provider store={store}>
+        <ScrollToTop />
+        <GlobalStyle />
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Intro />
+            <Skills />
+            <Projects />
+          </Route>
+          <Route exact path="/AllProjects">
+            <AllProjects />
+          </Route>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
+      </Provider>
     </Router>
   );
 }

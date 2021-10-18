@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 
 const breakPoint = '(max-width: 500px)'
 
@@ -42,7 +43,10 @@ const Name = styled.span`
   }
 `
 
-export default function TechBox({src, name, darkMode}) {
+export default function TechBox({src, name}) {
+
+  const darkMode = useSelector((state) => state.theme.value)
+
   return (
     <Container darkMode={darkMode}>
       <Image  src={src} alt={name}></Image>

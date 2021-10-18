@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { BiSad } from 'react-icons/bi'
+import { useSelector } from 'react-redux'
+
 
 const Container = styled.div`
   display: flex;
@@ -79,7 +81,10 @@ const HomePage = styled(Link)`
   font-weight: 400;
 `
 
-export default function NotFound({darkMode}) {
+export default function NotFound() {
+
+  const darkMode = useSelector((state) => state.theme.value)
+
   return (
     <Container>
       <Left>

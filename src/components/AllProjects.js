@@ -5,6 +5,7 @@ import { ProjectGrid } from './Projects'
 import { Link } from 'react-router-dom'
 import { FaArrowCircleLeft } from 'react-icons/fa'
 import { projects } from '../data'
+import { useSelector } from 'react-redux'
 
 const Container = styled.section`
   display: flex;
@@ -60,7 +61,10 @@ const ReturnHome = styled.div`
   }
 `
 
-export default function AllProjects({darkMode}) {
+export default function AllProjects() {
+
+  const darkMode = useSelector((state) => state.theme.value)
+
   return (
     <Container>
       <Title darkMode={darkMode}>ALL PROJECTS</Title>
@@ -72,7 +76,6 @@ export default function AllProjects({darkMode}) {
             desc={data.desc} 
             liveLink={data.liveLink} 
             github={data.github} 
-            darkMode={darkMode}
             key={index}
           />
         ))}

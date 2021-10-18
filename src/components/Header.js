@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { AiFillGithub, AiFillPhone } from "react-icons/ai"
 import { FiMail } from "react-icons/fi"
 import Toggle from './Toggle'
+import { useSelector } from 'react-redux'
 
 const breakPoint = '(max-width: 600px)'
 
@@ -90,10 +91,13 @@ const SocialIcon = styled.a`
   }
 `
 
-export default function Header({darkMode, setDarkMode}) {
+export default function Header() {
+
+  const darkMode = useSelector((state) => state.theme.value)
+
   return (
     <Container>
-      <Toggle darkMode={darkMode} setDarkMode={setDarkMode}></Toggle>
+      <Toggle></Toggle>
       <SocialWrapper>
         <SocialIcon href="https://github.com/MichaelMcCann1" target='_blank' aria-label="GitHub link" rel="noreferrer" darkMode={darkMode}>
           <AiFillGithub />
@@ -104,7 +108,7 @@ export default function Header({darkMode, setDarkMode}) {
         <SocialIcon href="tel:5136388362" aria-label="Call phone number" darkMode={darkMode}>
           <AiFillPhone style={{transform: 'scaleX(-1)'}}/>
         </SocialIcon>
-        <Resume href="Resume.pdf" target='_blank' rel="noreferrer" darkMode={darkMode}>Resume</Resume>
+        <Resume href="McCann_Resume.pdf" target='_blank' rel="noreferrer" darkMode={darkMode}>Resume</Resume>
       </SocialWrapper>
     </Container>
     

@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { HiSun, HiMoon } from "react-icons/hi"
+import { useSelector, useDispatch } from 'react-redux'
+import { changeTheme } from '../features/themeSlice'
 
 const Container = styled.div`
   margin-right: auto;
@@ -37,12 +39,15 @@ const Slider = styled.div`
   }
 `
 
-export default function Toggle({darkMode, setDarkMode}) {
+export default function Toggle() {
+
+  const darkMode = useSelector((state) => state.theme.value)
+  const dispatch = useDispatch()
 
   return (
     <Container>
       <Bar>
-        <Slider darkMode={darkMode} onClick={()=>setDarkMode(!darkMode)}>{darkMode ? <HiSun /> : <HiMoon/>}</Slider>
+        <Slider darkMode={darkMode} onClick={()=>dispatch(changeTheme())}>{darkMode ? <HiSun /> : <HiMoon/>}</Slider>
       </Bar>
     </Container>
   )

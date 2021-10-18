@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { BiLinkExternal } from "react-icons/bi"
 import  { AiFillGithub } from "react-icons/ai"
+import { useSelector } from 'react-redux'
 
 const breakPoint = '(max-width: 875px)'
 
@@ -133,9 +134,11 @@ const Container = styled.div`
   }
 `
 
-export default function ProjectBox({ImgSrc, title, desc, liveLink, github, darkMode}) {
+export default function ProjectBox({ImgSrc, title, desc, liveLink, github}) {
 
   let screenWidth = window.innerWidth;
+  const darkMode = useSelector((state) => state.theme.value)
+  
   return (
     <Container darkMode={darkMode}>
       <Image src={ImgSrc} alt={`screenshot of ${title} project`} darkMode={darkMode}></Image>

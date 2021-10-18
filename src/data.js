@@ -107,8 +107,16 @@ export const proficient = [
 
 export const competent = [
   {
+    src: "Images/Tech/Redux.svg",
+    name: "Redux"
+  },
+  {
     src: "Images/Tech/nodeJS.svg",
     name: "Node JS"
+  },
+  {
+    src: "Images/Tech/TypeScript.svg",
+    name: "TypeScript"
   },
   {
     src: "Images/Tech/Python.svg",
@@ -125,5 +133,5 @@ export const competent = [
   {
     src: "Images/Tech/firebase.svg",
     name: "Firebase"
-  }
+  },
 ]

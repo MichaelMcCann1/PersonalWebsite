@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 
 const breakPoint = '(max-width: 750px)'
 
@@ -7,12 +8,14 @@ const Container = styled.section`
   width: var(--width);
   max-width: var(--maxWidth);
   margin: 0 auto;
+  
 `
 const IntroContent = styled.div`
   display: flex;
   margin: 0 auto;
   margin-top: 3em;
   color: ${props => props.darkMode ? 'var(--darkModeText)' : 'black'};
+  transition: all .3s ease;
 
   @media ${breakPoint}{
     flex-direction: column;
@@ -96,7 +99,10 @@ const IntroParagraph = styled.p`
   }
 `
 
-export default function Intro({darkMode}) {
+export default function Intro() {
+
+  const darkMode = useSelector((state) => state.theme.value)
+
   return (
     <Container>
       <IntroContent darkMode={darkMode}>

@@ -4,6 +4,8 @@ import ProjectBox from './ProjectBox'
 import { Link } from 'react-router-dom'
 import { FaArrowCircleRight } from 'react-icons/fa'
 import { projects } from '../data'
+import { useSelector } from 'react-redux'
+
 
 const breakPoint = '(max-width: 750px)'
 
@@ -54,9 +56,10 @@ const AllProjects = styled.div`
   }
 `
 
-export default function Projects({darkMode}) {
+export default function Projects() {
 
   let featuredProjects = projects.slice(0,6)
+  const darkMode = useSelector((state) => state.theme.value)
 
   return (
     <Container>
@@ -68,13 +71,12 @@ export default function Projects({darkMode}) {
           desc={data.desc} 
           liveLink={data.liveLink} 
           github={data.github} 
-          darkMode={darkMode}
           key={index}
         />
         ))}
       </ProjectGrid>
       <AllProjectsLink to="/AllProjects">
-        <AllProjects darkMode={darkMode}>See All Projects <FaArrowCircleRight/></AllProjects>
+        <AllProjects>See All Projects <FaArrowCircleRight/></AllProjects>
       </AllProjectsLink>
     </Container>
   )

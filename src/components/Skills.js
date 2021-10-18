@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import TechBox from './TechBox'
 import { proficient, competent } from '../data'
+import { useSelector } from 'react-redux'
 
 const breakPoint = '(max-width: 800px)'
 
@@ -28,6 +29,7 @@ const TechContainerBox = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 1em;
+  transition: all .3s ease;
 
   @media ${breakPoint}{
     margin: 0 0 1.5em 0;
@@ -47,14 +49,17 @@ const TechWrapper = styled.div`
   justify-content: center;
 `
 
-export default function Skills({darkMode}) {
+export default function Skills() {
+
+  const darkMode = useSelector((state) => state.theme.value)
+
   return (
     <Container darkMode={darkMode}>
       <TechContainerBox>
         <TechTitle>Proficient with</TechTitle>
         <TechWrapper>
           {proficient.map((data, index) => (
-            <TechBox src={data.src} name={data.name} key={index} darkMode={darkMode} />
+            <TechBox src={data.src} name={data.name} key={index} />
           ))}
         </TechWrapper>
       </TechContainerBox>
@@ -62,7 +67,7 @@ export default function Skills({darkMode}) {
         <TechTitle>Competent with</TechTitle>
         <TechWrapper>
           {competent.map((data, index) => (
-            <TechBox src={data.src} name={data.name} key={index} darkMode={darkMode}/>
+            <TechBox src={data.src} name={data.name} key={index} />
           ))}
         </TechWrapper>
       </TechContainerBox>
