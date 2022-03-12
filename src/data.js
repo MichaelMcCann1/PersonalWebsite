@@ -100,8 +100,16 @@ export const proficient = [
     name: "Sass"
   },
   {
+    src: "Images/Tech/Git.svg",
+    name: "Git"
+  },
+  {
     src: "Images/Tech/styledComponents.svg",
     name: "Styled Components"
+  },
+  {
+    src: "Images/Tech/Recoil.png",
+    name: "Recoil"
   }
 ]
 
@@ -111,12 +119,20 @@ export const competent = [
     name: "Redux"
   },
   {
-    src: "Images/Tech/nodeJS.svg",
-    name: "Node JS"
+    src: "Images/Tech/typescript.svg",
+    name: "TypeScript"
   },
   {
-    src: "Images/Tech/TypeScript.svg",
-    name: "TypeScript"
+    src: "Images/Tech/ReactQuery.svg",
+    name: "React Query"
+  },
+  {
+    src: "Images/Tech/MUI.svg",
+    name: "Material UI"
+  },
+  {
+    src: "Images/Tech/nodeJS.svg",
+    name: "Node JS"
   },
   {
     src: "Images/Tech/Python.svg",
@@ -125,13 +141,5 @@ export const competent = [
   {
     src: "Images/Tech/Pandas.svg",
     name: "Pandas"
-  },
-  {
-    src: "Images/Tech/mongoDB.svg",
-    name: "Mongo DB"
-  },
-  {
-    src: "Images/Tech/firebase.svg",
-    name: "Firebase"
   },
 ]
