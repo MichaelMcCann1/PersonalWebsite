@@ -112,10 +112,10 @@ export default function Intro() {
             <Name>Michael McCann</Name>
           </HelloWrapper>
           <IntroParagraph>
-            And I love making content for the web and learning new technology to do it. I specialize in front-end development where I enjoy using CSS to make responsive layouts and JavaScript frameworks to make efficient and maintainable user interfaces.
+            And I am a developer at <a href="https://www.experoinc.com/" target="_blank">Expero</a> where I help build complex web applications for domain-expert users. I love making content for the web and learning new technology to do it. 
           </IntroParagraph>
           <IntroParagraph>
-          I am currently exploring various back-end web development technologies to add to my skillset. I am also always learning new CSS and JavaScript techniques because they are the foundation of the web. Check out my projects below to see what I have been up to lately.
+            I specialize in front-end development where I use the latest CSS features to create responsive page layouts and new JavaScript libraries to create efficient user interfaces. Check out my projects below to see what I have been up to lately.
           </IntroParagraph>
         </Left>
         <Right>
