@@ -99,6 +99,10 @@ const IntroParagraph = styled.p`
   }
 `
 
+const Expero = styled.a`
+  color: black;
+`
+
 export default function Intro() {
 
   const darkMode = useSelector((state) => state.theme.value)
@@ -112,7 +116,7 @@ export default function Intro() {
             <Name>Michael McCann</Name>
           </HelloWrapper>
           <IntroParagraph>
-            And I am a developer at <a href="https://www.experoinc.com/" target="_blank">Expero</a> where I help build complex web applications for domain-expert users. I love making content for the web and learning new technology to do it. 
+            And I am a developer at <Expero href="https://www.experoinc.com/" target="_blank">Expero</Expero> where I help build complex web applications for domain-expert users. I love making content for the web and learning new technology to do it. 
           </IntroParagraph>
           <IntroParagraph>
             I specialize in front-end development where I use the latest CSS features to create responsive page layouts and new JavaScript libraries to create efficient user interfaces. Check out my projects below to see what I have been up to lately.
